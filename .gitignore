@@ -1,0 +1,35 @@
+# Plugins (managed by plug/pack, not part of config)
+plugged/
+pack/
+
+# Secrets & machine-specific config
+db_config.vim
+db-ui/
+cspell-words.txt
+config_files/secrets.vim
+
+# Which languages this machine has support for — written by install.sh from
+# what you answered, so it differs per machine and is nobody else's business.
+config_files/languages.vim
+
+# Installer output (kept only when the headless vim run it logs fails)
+.plug-install.log
+
+# Editor / session state
+.netrwhist
+sessions/
+undo/
+# Swap files. The whole rotation, not just .swp/.swo: Vim moves the extension
+# down on collision (.swp → .swo → .swn → .swm → …), so a two-entry list lets
+# the third swap file in a directory through — and one was committed that way.
+# A swap file holds the full unsaved text of its buffer, which is the same
+# copy-outliving-the-original this repo blocks for undo files and viminfo.
+# The second pattern is the hidden form Vim writes beside a named file.
+*.sw[a-p]
+[._]*.sw[a-p]
+*~
+*.un~
+tags
+
+# OS clutter
+.DS_Store

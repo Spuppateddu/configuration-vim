@@ -1,0 +1,32 @@
+{
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "colors.enable": true,
+
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.enabledLanguageIds": [
+    "markdown",
+    "text",
+    "plaintext",
+    "gitcommit",
+    "git-commit",
+    "html",
+    "blade"
+  ],
+  "cSpellExt.enableDictionaries": ["italian"],
+  "cSpell.language": "en,it",
+  // Absolute on purpose — cSpell resolves a relative path against the project
+  // you have open. config_files/coc.vim overrides this at startup with the path
+  // derived from the actual checkout, so a worktree gets its own; this entry is
+  // the fallback for the normal ~/.vim install.
+  "cSpell.dictionaryDefinitions": [
+    { "name": "project-words", "path": "~/.vim/cspell-words.txt", "addWords": true }
+  ],
+  "cSpell.dictionaries": ["project-words"],
+
+  "clangd.arguments": [
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=never"
+  ],
+  "clangd.fallbackFlags": ["-std=c17", "-Wall", "-Wextra"]
+}
