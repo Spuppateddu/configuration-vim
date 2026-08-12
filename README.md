@@ -7,6 +7,8 @@ file search, Git integration, and more.
 No prior Vim knowledge is required to install it. Just copy and paste the
 commands for your operating system.
 
+![NERDTree, a Gruvbox-coloured buffer and the airline status bar](./pictures/vim_setup.png)
+
 > **Supported platforms:** Ubuntu 26.04 LTS and macOS. Those are the two the
 > config is installed and tested on; `install.sh` refuses to run anywhere else
 > rather than half-installing a toolchain. Both ship a Vim new enough for the

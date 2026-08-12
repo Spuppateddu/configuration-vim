@@ -26,7 +26,6 @@ augroup ColorTweaks
   " invalid are wrong often enough to be noise. Real errors come from coc.
   autocmd ColorScheme * highlight Error     NONE
 
-  " Vim's own spell checker.
   autocmd ColorScheme * highlight SpellBad   guifg=#ff0055 gui=bold
   autocmd ColorScheme * highlight SpellCap   guifg=#ffff00 gui=bold
   autocmd ColorScheme * highlight SpellLocal guifg=#00ffff gui=bold
@@ -42,6 +41,3 @@ augroup END
 " silent!: on a fresh clone gruvbox isn't installed yet, and E185 would open the
 " very launch you run :PlugInstall from on a "Press ENTER" prompt.
 silent! colorscheme gruvbox
-
-" NOTE: 'statusline' is deliberately not set here — airline owns it, and setting
-" it anywhere else just clobbers coc's status. See airline.vim.

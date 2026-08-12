@@ -41,9 +41,6 @@ if VimLangEnabled('javascript')
   Plug 'maxmellon/vim-jsx-pretty'
 endif
 
-" Deliberately absent: vim-prettier (formatting goes through coc-prettier) and
-" indentLine (its 'conceallevel' guides hide quotes in JSON and markdown links).
-
 " ── Colorscheme ─────────────────────────────────────────────────────────────
 Plug 'morhetz/gruvbox'
 

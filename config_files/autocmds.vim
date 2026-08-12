@@ -1,7 +1,6 @@
 " Autocommands that apply everywhere. Functions they call live in functions.vim.
 " Every group is wrapped in augroup + `autocmd!`, so re-sourcing doesn't stack.
 
-" Strip trailing whitespace on save.
 augroup TrimOnWrite
   autocmd!
   autocmd BufWritePre * call VimTrimWhitespace()

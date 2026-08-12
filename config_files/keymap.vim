@@ -21,10 +21,8 @@ inoremap jj <ESC>
 " Insert an empty checkbox, for notes.
 nnoremap <leader>K i- [ ] <Esc>F]la
 
-" Clear the search highlight.
 nnoremap <leader>w :noh<CR>
 
-" Toggle line numbers (see functions.vim).
 nnoremap <silent> <leader>tn :call VimToggleNumbers()<CR>
 
 " Auto-close pairs, <expr> so they can read the character under the cursor. The
@@ -90,7 +88,7 @@ xnoremap <leader>fo :<C-u>call <SID>AgVisual('')<CR>
 xnoremap <leader>fp :<C-u>call <SID>AgVisual(' -U')<CR>
 
 " Declared once, since rg and ag spell their ignore flags differently. Only what
-" is junk in *every* project: both match files too, so 'public' hid index.php.
+" is junk in *every* project — both match files too, not just directories.
 let s:ignore_dirs = ['.git', 'node_modules']
 
 " '--glob "!node_modules"', not '!node_modules/*': a ripgrep glob containing '/'

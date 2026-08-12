@@ -1,5 +1,4 @@
 " ~/.vim/vimrc — entry point, loaded by `runtime vimrc` from ~/.vimrc.
-" See README.md for install instructions.
 
 set nocompatible
 syntax on
@@ -56,7 +55,6 @@ set incsearch hlsearch
 set ignorecase smartcase
 
 " ── Indentation ─────────────────────────────────────────────────────────────
-" Per-language overrides live in indent.vim and c.vim.
 set smartindent
 set expandtab
 set tabstop=4 softtabstop=4 shiftwidth=4
@@ -80,7 +78,6 @@ set scrolloff=8
 " single enormous lines, and opening one locks vim up without this.
 set synmaxcol=300
 
-" Don't redraw mid-macro — only once it finishes.
 set lazyredraw
 
 " Let vim pick the faster regex engine per pattern. Forcing the NFA engine

@@ -56,7 +56,6 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -101,12 +100,9 @@ unlet s:block
 augroup CocSetup
   autocmd!
   if s:coc_ready
-    " Highlight the symbol and its references when holding the cursor.
     autocmd CursorHold * silent call CocActionAsync('highlight')
-    " Route `gq` through the language server, for those filetypes only.
     execute 'autocmd FileType' join(s:coc_gq, ',')
           \ "setl formatexpr=CocAction('formatSelected')"
-    " Update signature help on jump placeholder
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   endif
   " SCSS treats @-rules as part of a keyword for completion. Harmless without
