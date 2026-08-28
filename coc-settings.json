@@ -28,5 +28,13 @@
     "--completion-style=detailed",
     "--header-insertion=never"
   ],
-  "clangd.fallbackFlags": ["-std=c17", "-Wall", "-Wextra"]
+  "clangd.fallbackFlags": [
+    "-std=c17",
+    "-Wall",
+    "-Wextra"
+  ],
+  "json.schemaDownload.trustedDomains": {
+    "https://www.schemastore.org": true,
+    "https://json.schemastore.org": true
+  }
 }
