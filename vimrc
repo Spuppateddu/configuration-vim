@@ -33,13 +33,15 @@ endif
 " and searched-for secrets into ~/.viminfo, which outlives the file. Marks stay.
 set viminfo='100,<0,s0,:0,/0,h
 
-" Re-read files changed outside vim. FocusGained stats every buffer (vim has been
-" away); BufEnter only <abuf>, since a bare checktime there is per-switch waste.
+" Re-read files changed outside vim. CursorHold is the one that makes it live: it
+" fires after 'updatetime' idle, the others only when you come back to the buffer.
 set autoread
 augroup AutoReload
   autocmd!
-  autocmd FocusGained * silent! checktime
-  autocmd BufEnter    * silent! checktime <abuf>
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
+  " A silent swap under the cursor reads as a bug, so say it happened.
+  autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo 'File changed on disk — buffer reloaded.' | echohl None
 augroup END
 
 " Off: otherwise any repo you clone runs its own .vimrc. 'secure' is no fix — it
