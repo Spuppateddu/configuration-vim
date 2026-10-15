@@ -1008,7 +1008,8 @@ else
     # rendered, so neither the exit status nor the log can be trusted to say.
     # Ask vim-plug directly instead: g:plugs maps every declared plugin to the
     # directory it should live in, so anything without one did not install.
-    vim -es -u "$HOME/.vimrc" +'PlugInstall --sync' +qall >"$PLUG_LOG" 2>&1 || true
+    # Through a pipe, not `>file`: with stdout on a plain file vim-plug clones nothing.
+    vim -es -u "$HOME/.vimrc" +'PlugInstall --sync' +qall 2>&1 | cat >"$PLUG_LOG" || true
 
     # A second vim rather than one more '+cmd' on the line above: PlugInstall
     # swallows everything queued after it, so the check never ran and every
